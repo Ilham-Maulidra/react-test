@@ -6,17 +6,20 @@
 import { Route, Routes } from "react-router-dom";
 import { Homepage } from "./components/page/Homepage";
 import { About } from "./components/page/About";
-import { Header } from "./components/uikit/Header";
+import { Layout } from "./components/uikit/Layout";
+import { Hijab } from "./components/produk/hijab";
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="produk/hijab" element={<Hijab />} />
+          <Route path="/about" element={<About />} />
+        </Route>
       </Routes>
     </>
   );

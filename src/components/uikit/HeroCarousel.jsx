@@ -36,7 +36,7 @@ function HeroCarousel() {
   return (
     <Carousel.Root
       slideCount={items.length}
-      maxW="5xl"
+      maxW="3xl"
       mx="auto"
       gap="4"
       position="relative"
