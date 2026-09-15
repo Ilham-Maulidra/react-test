@@ -4,9 +4,9 @@
 // import viteLogo from './assets/vite.svg'
 // import './App.css
 import { Route, Routes } from "react-router-dom";
-import { Homepage } from "./components/component/Homepage";
-import { About } from "./components/component/About";
-import { Header } from "./components/component/Header";
+import { Homepage } from "./components/page/Homepage";
+import { About } from "./components/page/About";
+import { Header } from "./components/uikit/Header";
 
 function App() {
   // const [count, setCount] = useState(0)

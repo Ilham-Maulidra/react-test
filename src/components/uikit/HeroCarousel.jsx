@@ -1,4 +1,3 @@
-// import { Box } from "@chakra-ui/react";
 import {
   AspectRatio,
   Box,
@@ -18,7 +17,22 @@ const items = [
   "https://images.unsplash.com/photo-1607776905497-b4f788205f6a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2370",
 ];
 
-function Homepage() {
+const ActionButton = forwardRef(function ActionButton(props, ref) {
+  return (
+    <IconButton
+      {...props}
+      ref={ref}
+      size="xs"
+      variant="outline"
+      rounded="full"
+      position="absolute"
+      zIndex="1"
+      bg="bg"
+    />
+  );
+});
+
+function HeroCarousel() {
   return (
     <Carousel.Root
       slideCount={items.length}
@@ -27,6 +41,7 @@ function Homepage() {
       gap="4"
       position="relative"
       colorPalette="white"
+      mt="4"
     >
       <Carousel.Control gap="4" width="full" position="relative">
         <Carousel.PrevTrigger asChild>
@@ -35,7 +50,7 @@ function Homepage() {
           </ActionButton>
         </Carousel.PrevTrigger>
 
-        <Carousel.ItemGroup width="full" borderRadius={20} margin={10}>
+        <Carousel.ItemGroup width="full" borderRadius={20}>
           {items.map((src, index) => (
             <Carousel.Item key={index} index={index}>
               <AspectRatio ratio={16 / 9} maxH="72vh" w="full">
@@ -68,19 +83,5 @@ function Homepage() {
     </Carousel.Root>
   );
 }
-const ActionButton = forwardRef(function ActionButton(props, ref) {
-  return (
-    <IconButton
-      {...props}
-      ref={ref}
-      size="xs"
-      variant="outline"
-      rounded="full"
-      position="absolute"
-      zIndex="1"
-      bg="bg"
-    />
-  );
-});
 
-export { Homepage };
+export { HeroCarousel };
