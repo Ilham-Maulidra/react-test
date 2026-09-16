@@ -1,10 +1,10 @@
 import { Heading, Wrap, Box } from "@chakra-ui/react";
 import { ProdukGrid } from "../uikit/ProdukGrid";
 
-function Hijab() {
+function Blouse() {
   return (
     <Box margin="2rem">
-      <Heading textAlign="center">Ini halaman hijab</Heading>
+      <Heading textAlign="center">Ini halaman blouse</Heading>
       <Wrap gap="2rem" align="center" marginTop="2rem">
         <ProdukGrid />
       </Wrap>
@@ -12,4 +12,4 @@ function Hijab() {
   );
 }
 
-export { Hijab };
+export { Blouse };
