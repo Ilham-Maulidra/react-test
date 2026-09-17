@@ -6,7 +6,7 @@ function Hijab() {
     <Box margin="2rem">
       <Heading textAlign="center">Ini halaman hijab</Heading>
       <Wrap gap="2rem" align="center" marginTop="2rem">
-        <ProdukGrid />
+        <ProdukGrid category="men's clothing" />
       </Wrap>
     </Box>
   );

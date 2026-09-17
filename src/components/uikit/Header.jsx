@@ -1,4 +1,4 @@
-import { Heading, Box, Flex } from "@chakra-ui/react";
+import { Image, Box, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -12,7 +12,10 @@ function Header() {
       p="1rem"
       bg="gray.300"
     >
-      <Heading ml={"3rem"}>Header</Heading>
+      <Link to="/">
+        <Image src="/Logo.png" alt="Logo" w={150} ml={10} />
+      </Link>
+
       <Flex
         position="absolute"
         left="50%"

@@ -6,7 +6,7 @@ function Blouse() {
     <Box margin="2rem">
       <Heading textAlign="center">Ini halaman blouse</Heading>
       <Wrap gap="2rem" align="center" marginTop="2rem">
-        <ProdukGrid />
+        <ProdukGrid category="jewelery" />
       </Wrap>
     </Box>
   );
