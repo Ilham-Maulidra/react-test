@@ -9,6 +9,7 @@ import { About } from "./components/page/About";
 import { Layout } from "./components/uikit/Layout";
 import { Hijab } from "./components/produk/hijab";
 import { Blouse } from "./components/produk/blouse";
+import { ProtectedRoutes } from "./components/ui/ProtectedRoutes";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,7 +21,14 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="produk/hijab" element={<Hijab />} />
           <Route path="produk/blouse" element={<Blouse />} />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="about"
+            element={
+              <ProtectedRoutes>
+                <p>ini halaman profile</p>
+              </ProtectedRoutes>
+            }
+          />
         </Route>
       </Routes>
     </>
