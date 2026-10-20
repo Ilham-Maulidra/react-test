@@ -10,7 +10,7 @@ function Header() {
       display="flex"
       alignItems="center"
       p="1rem"
-      bg="gray.300"
+      
     >
       <Link to="/">
         <Image src="/Logo.png" alt="Logo" w={150} ml={10} />

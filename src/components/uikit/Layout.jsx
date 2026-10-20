@@ -6,9 +6,9 @@ function Layout() {
   return (
     <>
       <Header />
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex"}}>
         <Sidebar />
-        <div style={{ flex: 1, padding: "1rem" }}>
+        <div style={{ flex: 1, padding: "1rem", backgroundColor:"grey"}}>
           <Outlet />
         </div>
       </div>

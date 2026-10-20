@@ -12,8 +12,8 @@ function Card({ urlImages, onClick, title, desc }) {
       width="15rem"
     >
       <img src={urlImages} alt="Product Image" width={80} height={100} />
-      <Heading fontSize={10}>{title}</Heading>
-      <Text>{desc.length > 20 ? desc.slice(0, 20) + "..." : desc}</Text>
+      <Heading fontSize={10} color="black">{title}</Heading>
+      <Text color="black">{desc.length > 20 ? desc.slice(0, 20) + "..." : desc}</Text>
       <Button label="Buy Now" variant="secondary" onClick={onClick} />
     </Box>
   );

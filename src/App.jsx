@@ -9,6 +9,7 @@ import { About } from "./components/page/About";
 import { Layout } from "./components/uikit/Layout";
 import { Hijab } from "./components/produk/hijab";
 import { Blouse } from "./components/produk/blouse";
+import {Login} from "./components/page/Login";
 import { ProtectedRoutes } from "./components/ui/ProtectedRoutes";
 
 function App() {
