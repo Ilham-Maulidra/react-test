@@ -1,14 +1,17 @@
 import { Flex, Stack, Box, Heading, Text, Input, Field, HStack, Link, Button} from "@chakra-ui/react"
 import {PasswordInput} from "../ui/password-input"
 import {useState} from "react"
+import { useNavigate } from "react-router-dom"
 
 
 const Login = () => {
+  const navigate = useNavigate()
   const [mode, setMode] = useState("login")
   const isLogin = mode === "login"
 
-  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [showPassword, setShowPassword] = useState(false)
+  const [password, setPassword] = useState("")
   // const [address, setAddress]= useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
@@ -23,12 +26,14 @@ const Login = () => {
       const res = await fetch(url,{
         method: "POST",
         headers: {"Content-Type" : "application/json"},
-        body: JSON.stringify({email, password}),
+        body: JSON.stringify({username, password}),
+        credentials: "include"
       })
-      if (!res.ok) throw new Error(isLogin ? "Email atau Password salah" : "Registrasi gagal")
+      if (!res.ok) throw new Error(isLogin ? "Username atau Password salah" : "Registrasi gagal")
       if (isLogin){
         const data = await res.json()
-       localStorage.setItem("token", data.token)
+      
+        navigate("/about")
       } 
       
     }catch (err){
@@ -56,13 +61,13 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <Stack color="black">
               <Field.Root required>
-                <Field.Label>Email</Field.Label>
-                <Input type="email" placeholder="Example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <Field.Label>Username</Field.Label>
+                <Input type="text" placeholder="Masukkan username" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 <Field.ErrorText>This field is required</Field.ErrorText>
               </Field.Root>
               <Field.Root required>
                 <Field.Label>Password</Field.Label>
-                <PasswordInput placeholder="*********" visible={showPassword} onVisibleChange={setShowPassword}/>
+                <PasswordInput placeholder="*********" visible={showPassword} onVisibleChange={setShowPassword} onChange = {(e) => setPassword(e.target.value)}/>
                 <Field.ErrorText>This field is required</Field.ErrorText>
               </Field.Root>
               {/* {!isLogin ? 

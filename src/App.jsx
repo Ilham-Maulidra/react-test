@@ -9,8 +9,9 @@ import { About } from "./components/page/About";
 import { Layout } from "./components/uikit/Layout";
 import { Hijab } from "./components/produk/hijab";
 import { Blouse } from "./components/produk/blouse";
-import {Login} from "./components/page/Login";
+import { Login } from "./components/page/Login";
 import { ProtectedRoutes } from "./components/ui/ProtectedRoutes";
+import { AddProduct } from "./components/page/AddProduct"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -19,15 +20,22 @@ function App() {
     <>
       <Routes>
         <Route path="login" element={<Login />} />
+        {/* <Route path="add" element={<AddProduct/>}/> */}
+        <Route path="add" element={
+            <ProtectedRoutes>
+              <AddProduct/>
+            </ProtectedRoutes>
+          } />
         <Route element={<Layout />}>
           <Route path="/" element={<Homepage />} />
           <Route path="produk/hijab" element={<Hijab />} />
           <Route path="produk/blouse" element={<Blouse />} />
+          
           <Route
             path="about"
             element={
               <ProtectedRoutes>
-                <p>ini halaman profile</p>
+                <About/>
               </ProtectedRoutes>
             }
           />
